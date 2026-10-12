@@ -1,0 +1,38 @@
+# Replace example column names with the exact names in your vetted catalogue.
+data:
+  photometric_csv: data/raw/sdss_photometry.csv
+  image_metadata_csv: data/raw/galaxy_zoo_images.csv
+  target_column: redshift
+  photometric_feature_columns:
+    - u
+    - g
+    - r
+    - i
+    - z
+  photometric_object_id_column: objid
+  image_object_id_column: objid
+  image_path_column: image_path
+  # Matching is disabled until provenance, identifier semantics, and coordinate/
+  # catalogue cross-identification have been checked for these particular files.
+  source_compatibility_verified: false
+  # Exact identifier matching is allowed only after setting the flag above true.
+
+preprocessing:
+  image_size: 224
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+  random_seed: 42
+
+training:
+  batch_size: 32
+  epochs: 20
+  learning_rate: 0.001
+  fine_tune_backbone: false
+
+models:
+  photometric_checkpoint: models/photometric.keras
+  image_checkpoint: models/image.keras
+  multimodal_checkpoint: models/multimodal.keras
+  photometric_scaler: models/photometric_scaler.joblib
+

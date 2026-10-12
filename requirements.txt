@@ -1,0 +1,15 @@
+# Python 3.11; CPU TensorFlow build is suitable for the initial project baseline.
+tensorflow==2.15.1
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
+Pillow==10.4.0
+opencv-python-headless==4.10.0.84
+matplotlib==3.9.1
+seaborn==0.13.2
+astropy==6.1.2
+streamlit==1.37.1
+PyYAML==6.0.2
+joblib==1.4.2
+pytest==8.3.2
+
